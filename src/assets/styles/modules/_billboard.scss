@@ -1,15 +1,28 @@
 .billboard {
     padding: 120px 0 100px;
 
+    @media #{$mq-620-down} {
+        padding: 40px 0 20px;
+    }
     .container {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+
+        @media #{$mq-760-down} {
+            flex-direction: column;
+        }
     }
 
     &__feature {
         width: 60%;
 
+        @media #{$mq-900-down} {
+            width: 50%;
+        }
+        @media #{$mq-760-down} {
+            width: 100%;
+        }
         img {
             max-width: 100%;
         }
@@ -18,6 +31,14 @@
     &__content {
         width: 40%;
         padding-left: 50px;
+        @media #{$mq-900-down} {
+            width: 50%;
+        }
+        @media #{$mq-760-down} {
+            text-align: center;
+            width: 100%;
+            padding-left: 0;
+        }
     }
 
     &__tagline {
@@ -30,7 +51,12 @@
         padding: 40px 0 30px;
     }
 
-    
+    .icon-action-list {
+
+        @media #{$mq-760-down} {
+            justify-content: center;
+        }
+    }
     .btn--link {
 
         svg.icon {

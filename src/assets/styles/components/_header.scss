@@ -6,8 +6,12 @@
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        > *:last-child {
-            margin-left: auto;
+        @media #{$mq-760-down} {
+            flex-direction: column;
+            justify-content: center;
+            > * + * {
+                margin-top: 24px;
+            }
         }
     }
 }
@@ -17,6 +21,9 @@
     position: relative;
     &__logo {
         width: 60px;
+        @media #{$mq-760-down} {
+            width: 48px;
+        }
     }
     &__logo + &__text {
         margin-left: 15px;
@@ -24,6 +31,9 @@
     &__text {
         @include fsz(28px);
         font-weight: 800;
+        @media #{$mq-760-down} {
+            @include fsz(20px);
+        }
         &:hover,
         &:focus,
         &:active {

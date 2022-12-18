@@ -105,4 +105,10 @@ h6 {
 .title--md {
   @include fsz(36px);
   font-weight: 800;
+  @media #{$mq-900-down} {
+    @include fsz(30px);
+  }
+  @media #{$mq-620-down} {
+    @include fsz(24px);
+  }
 }

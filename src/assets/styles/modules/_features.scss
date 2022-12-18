@@ -1,34 +1,69 @@
 .features {
     padding: 80px 0;
-
+    @media #{$mq-620-down} {
+        padding: 40px 0 20px;
+    }
     &__card {
         padding: 80px 50px;
         box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 30.1471px 24.1177px rgba(0, 0, 0, 0.0456112), 0px 12.5216px 10.0172px rgba(0, 0, 0, 0.035), 0px 4.5288px 3.62304px rgba(0, 0, 0, 0.0243888);
         border-radius: 24px;
         background-color: rgba(255, 255, 255, 0.8);
+        @media #{$mq-620-down} {
+            padding: 30px;
+        }
     }
 
     &__inner {
         display: flex;
         flex-wrap: wrap;
         align-items: center;
+        @media #{$mq-760-down} {
+            flex-direction: column-reverse;
+        }
     }
 
     &__content {
         width: 35%;
+        padding-right: 20px;
+        @media #{$mq-1180-down} {
+            width: 40%;
+        }
+        @media #{$mq-760-down} {
+             width: 100%;
+             padding: 40px 0 0;
+        }
     }
 
     &__media {
         width: 65%;
+        @media #{$mq-1180-down} {
+            width: 60%;
+        }
+        @media #{$mq-760-down} {
+             width: 100%;
+        }
     }
 }
 
 .feature-list {
+    @media #{$mq-760-down} {
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media #{$mq-620-down} {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
     li {
         @include fsz(18px);
         font-weight: 600;
         position: relative;
         padding-left: 25px;
+        line-height: 1.4;
+        @media #{$mq-900-down} {
+            @include fsz(16px);
+        }
         &:not(:last-child) {
             margin-bottom: 25px;
         }

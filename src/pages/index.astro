@@ -1,0 +1,202 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout title="Home">
+  <section class="billboard">
+    <div class="container">
+      <div class="billboard__feature">
+        <figure class="billboard__image">
+          <img src="/images/product/main.webp" alt="A screenshot of the app" />
+        </figure>
+      </div>
+
+      <div class="billboard__content">
+        <div class="billboard__tagline">
+          <p>
+            Stratus is a beautiful, clean and simple new tab page for Chrome,
+            Edge and FireFox
+          </p>
+        </div>
+        <div class="billboard__action">
+          <a
+            href="https://chrome.google.com/webstore/detail/stratus-new-tab-page/emmihlmfocedjhjafneinogeccblecaj?hl=en-GB"
+            class="btn btn--primary btn--xl"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="current-browser"
+          >
+            <svg class="icon icon-extension-add">
+              <use xlink:href="#icon-extension-add"></use>
+            </svg>
+            Download for&nbsp;<span id="current-browser-text">Chrome</span>
+          </a>
+        </div>
+        <div class="billboard__secondary-action">
+          <a
+            href="https://stratus.vercel.app"
+            class="btn btn--link"
+            target="_blank"
+            rel="noopener noreferrer"
+            id="demo-website"
+          >
+            Try the web version
+            <svg class="icon icon-arrow-top-right">
+              <use xlink:href="#icon-arrow-top-right"></use>
+            </svg>
+          </a>
+        </div>
+        <div class="billboard__tertiary-action">
+          <h3 class="title--xs">Available for</h3>
+          <ul class="icon-action-list">
+            <li class="icon-action-list__item">
+              <a
+                href="https://chrome.google.com/webstore/detail/stratus-new-tab-page/emmihlmfocedjhjafneinogeccblecaj?hl=en-GB"
+                class="btn btn--icon"
+                aria-label="Download Extension for chrome"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="chrome-browser"
+              >
+                <figure class="btn-icon">
+                  <img
+                    src="/images/browsers/chrome.webp"
+                    alt="Icon for chrome"
+                  />
+                </figure>
+              </a>
+            </li>
+            <li class="icon-action-list__item">
+              <a
+                href="https://addons.mozilla.org/en-US/firefox/addon/stratus-tab/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search"
+                class="btn btn--icon"
+                aria-label="Download Extension for FireFox"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="firefox-browser"
+              >
+                <figure class="btn-icon">
+                  <img
+                    src="/images/browsers/firefox.webp"
+                    alt="Icon for FireFox"
+                  />
+                </figure>
+              </a>
+            </li>
+            <li class="icon-action-list__item">
+              <a
+                href="https://microsoftedge.microsoft.com/addons/detail/stratus-new-tab-page/hgcmeilpgndmndemhfpogkbojfajpfoi"
+                class="btn btn--icon"
+                aria-label="Download Extension for Edge"
+                target="_blank"
+                rel="noopener noreferrer"
+                id="edge-browser"
+              >
+                <figure class="btn-icon">
+                  <img src="/images/browsers/edge.webp" alt="Icon for Edge" />
+                </figure>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="features">
+    <div class="container">
+      <h2 class="title--md text-center">Customizable & Feature Packed</h2>
+      <div class="features__card">
+        <div class="features__inner">
+          <div class="features__content">
+            <ul class="feature-list">
+              <li>Gregorian and Nepali date</li>
+              <li>A new wallpaper everyday</li>
+              <li>World clock</li>
+              <li>Daily Weather Display</li>
+              <li>Todo List</li>
+              <li>Dark and Light Themes</li>
+              <li>Offline Capable</li>
+            </ul>
+          </div>
+          <div class="features__media">
+            <figure class="features__image">
+              <img
+                src="/images/product/settings.jpg"
+                alt="settings page of stratus"
+              />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- .features ends -->
+    <section class="cta text-center">
+      <div class="container">
+        <h2 class="title--md">Completely Free & Open Source</h2>
+
+        <div class="entry-content">
+          <p>
+            Everything including the server code is open-source and available on
+            Github. You can roll your own in just a few minutes. No data is
+            stored with us and nothing is shared with a third-party services
+          </p>
+        </div>
+
+        <div class="cta__action">
+          <a
+            href="https://github.com/dineshkhadka/stratus"
+            class="btn btn--primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="icon icon-fork">
+              <use xlink:href="#icon-fork"></use>
+            </svg>
+            Visit the Github Repo
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- .cta ends -->
+  </section>
+</DefaultLayout>
+<script>
+  const link = {
+    chrome:
+      "https://chrome.google.com/webstore/detail/stratus-new-tab-page/emmihlmfocedjhjafneinogeccblecaj?hl=en-GB",
+    edge: "https://microsoftedge.microsoft.com/addons/detail/stratus-new-tab-page/hgcmeilpgndmndemhfpogkbojfajpfoi",
+    firefox:
+      "https://addons.mozilla.org/en-US/firefox/addon/stratus-tab/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search",
+    web: "https://stratus.vercel.app",
+  };
+  if (
+    typeof window !== "undefined" &&
+    typeof window.navigator !== "undefined"
+  ) {
+    function getBrowser() {
+      let userAgent = navigator.userAgent;
+      let browserName;
+
+      if (userAgent.match(/chrome|chromium|crios/i)) {
+        browserName = "chrome";
+      } else if (userAgent.match(/firefox|fxios/i)) {
+        browserName = "firefox";
+      } else if (userAgent.match(/safari/i)) {
+        browserName = "safari";
+      } else if (userAgent.match(/opr\//i)) {
+        browserName = "opera";
+      } else if (userAgent.match(/edg/i)) {
+        browserName = "edge";
+      } else {
+        browserName = "chrome";
+      }
+      return browserName;
+    }
+    const currentBrowser = document.querySelector("#current-browser");
+    const currentBrowserText = document.querySelector("#current-browser-text");
+    if (typeof currentBrowser != "undefined") {
+      currentBrowser.setAttribute("href", link[getBrowser()]);
+      currentBrowserText.innerHTML = getBrowser();
+    }
+  }
+</script>

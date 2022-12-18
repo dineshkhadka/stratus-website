@@ -1,0 +1,55 @@
+---
+import DefaultLayout from "../layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout title="Privacy Policy">
+  <section>
+    <div class="container">
+      <h1>Privacy Policy</h1><br />
+    </div>
+  </section>
+  <section class="general-content">
+    <div class="container">
+      <div class="entry-content">
+        <h3>Third Party Services</h3>
+        <p>
+          To provide the latest images and weather details. We utilize the
+          Unsplash, Openweathermap and openmeteo API to provide you the data.
+          However, stratus uses its open-source backend server which provides
+          you with the data.
+        </p>
+        <h3>Data we collect</h3>
+        <h4>Location data</h4>
+        <p>
+          If you choose to use the weather function. You will be providing us
+          with the <strong>place name</strong> and/or the{" "}
+          <strong>geo-location co-ordinates</strong> of your device. We do not store
+          any of the data with use. Both the frontend and the server are open-source
+          and with very few modification you are able to roll your own server if
+          you choose to do so.
+        </p>
+        <p>
+          Please be rest assured,{" "}
+          <strong>none of the location data</strong> can be used to directly identify
+          you by any third party service as our servers mask any directly identifying
+          data between you and the third party server
+        </p>
+        <h4>Unsplash Images</h4>
+        <p>
+          We use Unsplash to fetch images from curated collections. Due to our
+          limted resources, image are not served from our server. We pull a
+          random Unsplash Image link from the collection. Unsplash may collect
+          some data. Please refer to the{" "}
+          <a
+            href="https://unsplash.com/privacy"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Unsplash Privacy Policy
+          </a>{" "}
+          page for futher information
+        </p>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

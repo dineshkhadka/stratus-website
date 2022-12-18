@@ -1,0 +1,17 @@
+{
+  "name": "stratus-website",
+  "description": "A clean, beautiful and simple new tab page with daily wallpapers, weathers, world clock and more",
+  "version": "1.0.1",
+  "author": "Dinesh Khadka",
+  "homepage": "https://stratus.lakai.dev",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^1.6.3",
+    "sass": "^1.49.9"
+  }
+}

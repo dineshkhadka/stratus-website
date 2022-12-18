@@ -1,0 +1,61 @@
+.billboard {
+    padding: 120px 0 100px;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__feature {
+        width: 60%;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    &__content {
+        width: 40%;
+        padding-left: 50px;
+    }
+
+    &__tagline {
+        @include fsz(16px);
+        line-height: 1.54;
+        font-weight: 500;
+    }
+
+    &__secondary-action {
+        padding: 40px 0 30px;
+    }
+
+    
+    .btn--link {
+
+        svg.icon {
+            width: 16px;
+            height: 16px;
+            position: relative;
+            transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            svg.icon {
+                transform: translate3d(2px, -2px, 0) scale(1.05);
+            }
+        }
+    }
+
+    .btn-icon {
+        position: relative;
+        transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+        &:hover,
+        &:focus,
+        &:active {
+            transform: translate3d(0, -3px, 0) scale(1.05);
+        }
+    }
+}

@@ -1,0 +1,20 @@
+<header class="header">
+  <div class="container">
+    <div class="brand-container">
+      <div class="brand">
+        <figure class="brand__logo">
+          <img
+            src={(await import("../assets/branding/logo.svg")).default}
+            alt="Stratus Logo"
+          />
+        </figure>
+        <a href="/" class="brand__text">Stratus</a>
+      </div>
+    </div>
+    <nav class="nav">
+      <ul class="menu">
+        <slot />
+      </ul>
+    </nav>
+  </div>
+</header>

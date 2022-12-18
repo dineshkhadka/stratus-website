@@ -1,0 +1,18 @@
+.footer {
+    padding: 40px 0;
+
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 15px;
+
+        li {
+            padding: 0 6px;
+            &:not(:last-child):after {
+                content: '/';
+                margin-left: 6px;
+            }
+        }
+    }
+}

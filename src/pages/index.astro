@@ -173,30 +173,20 @@ import DefaultLayout from "../layouts/DefaultLayout.astro";
     typeof window !== "undefined" &&
     typeof window.navigator !== "undefined"
   ) {
-    function getBrowser() {
-      let userAgent = navigator.userAgent;
-      let browserName;
-
-      if (userAgent.match(/chrome|chromium|crios/i)) {
-        browserName = "chrome";
-      } else if (userAgent.match(/firefox|fxios/i)) {
-        browserName = "firefox";
-      } else if (userAgent.match(/safari/i)) {
-        browserName = "safari";
-      } else if (userAgent.match(/opr\//i)) {
-        browserName = "opera";
-      } else if (userAgent.match(/edg/i)) {
-        browserName = "edge";
-      } else {
-        browserName = "chrome";
-      }
-      return browserName;
-    }
+    
+    var browser = (function (agent) {
+        switch (true) {
+            case agent.indexOf("edg/") > -1: return "edge"; // Match also / to avoid matching for the older Edge
+            case agent.indexOf("chrome") > -1 && !!(window as any).chrome: return "chrome";
+            case agent.indexOf("firefox") > -1: return "firefox";
+            default: return "chrome";
+        }
+    })(window.navigator.userAgent.toLowerCase());
     const currentBrowser = document.querySelector("#current-browser");
     const currentBrowserText = document.querySelector("#current-browser-text");
     if (typeof currentBrowser != "undefined") {
-      currentBrowser.setAttribute("href", link[getBrowser()]);
-      currentBrowserText.innerHTML = getBrowser();
+      currentBrowser.setAttribute("href", link[browser]);
+      currentBrowserText.innerHTML = browser;
     }
   }
 </script>

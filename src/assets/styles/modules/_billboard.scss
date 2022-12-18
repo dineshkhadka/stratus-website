@@ -4,6 +4,7 @@
     @media #{$mq-620-down} {
         padding: 40px 0 20px;
     }
+
     .container {
         display: flex;
         flex-wrap: wrap;
@@ -20,20 +21,37 @@
         @media #{$mq-900-down} {
             width: 50%;
         }
+
         @media #{$mq-760-down} {
             width: 100%;
         }
+
         img {
             max-width: 100%;
         }
     }
 
+    &__image {
+        img {
+            display: block;
+        }
+        box-shadow:
+            0px 0.5px 2.7px rgba(0, 0, 0, 0.017),
+            0px 1.1px 6.6px rgba(0, 0, 0, 0.024),
+            0px 2.1px 12.4px rgba(0, 0, 0, 0.03),
+            0px 3.8px 22.1px rgba(0, 0, 0, 0.036),
+            0px 7.1px 41.4px rgba(0, 0, 0, 0.043),
+            0px 17px 99px rgba(0, 0, 0, 0.06);
+    }
+
     &__content {
         width: 40%;
         padding-left: 50px;
+
         @media #{$mq-900-down} {
             width: 50%;
         }
+
         @media #{$mq-760-down} {
             text-align: center;
             width: 100%;
@@ -57,6 +75,7 @@
             justify-content: center;
         }
     }
+
     .btn--link {
 
         svg.icon {
@@ -78,6 +97,7 @@
     .btn-icon {
         position: relative;
         transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+
         &:hover,
         &:focus,
         &:active {

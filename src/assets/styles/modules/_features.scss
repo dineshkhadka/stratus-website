@@ -43,6 +43,42 @@
              width: 100%;
         }
     }
+    &__image {
+        position: relative;
+        z-index: 1;
+        img {
+            border-radius: 15px;
+        }
+
+        &:before {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient(-45deg, #96ff81 0%, #c78aff 100%);
+            transform: translate3d(0px, 1px, 0) scale(1.05);
+            filter: blur(44px);
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            border-radius: inherit;
+        }
+        &::after {
+            content: "";
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: inherit;
+            border-radius: inherit;
+        }
+    }
+            
+        
 }
 
 .feature-list {
